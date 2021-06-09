@@ -19,12 +19,22 @@ class My_Alarm(QThread):
     def run(self):
         self.hour = self.ui.lineEdit_hour.text()
         self.minute = self.ui.lineEdit_minute.text()
+        while True:
+            if self.hour == str('{0:%H}'.format(datetime.now())) and self.minute == str('{0:%M}'.format(datetime.now())):
+                print('zah')
+                data, fs = sf.read('agua.wav')
+                sd.play(data, fs)
+                status = sd.wait()
+                self.ui.rb_off.clicked.connect(self.my_offalarm)
 
-        if self.hour == str('{0:%H}'.format(datetime.now())) and self.minute == str('{0:%M}'.format(datetime.now())):
-            print('zah')
-            data, fs = sf.read('agua.wav')
-            sd.play(data, fs)
-            status = sd.wait()
+            # else:
+                # print(datetime.now())
+                # print('no')
 
-        else:
-            print('no')
+    def my_offalarm(self):
+        # print("off")
+        # data, fs = sf.read('agua.wav')
+        # sd.stop(data)
+        # if self.ui.rb_off.clicked:
+        print('stop')
+        sd.stop()
