@@ -1,6 +1,7 @@
 # Alarm_Clock
-![Screenshot from 2021-06-06 18-42-29](https://user-images.githubusercontent.com/80582110/120927758-38607780-c6f7-11eb-96b5-95642c2e494a.png)
+![Screenshot from 2021-06-09 23-46-54](https://user-images.githubusercontent.com/80582110/121416566-2f350c00-c97e-11eb-8c4a-e972e528140c.png)
 
-![Screenshot from 2021-06-06 18-42-14](https://user-images.githubusercontent.com/80582110/120927763-3c8c9500-c6f7-11eb-8202-a163b80dbeb6.png)
+![Screenshot from 2021-06-09 23-47-32](https://user-images.githubusercontent.com/80582110/121416595-36f4b080-c97e-11eb-9151-14c9982421f2.png)
 
-![Screenshot from 2021-06-06 18-41-49](https://user-images.githubusercontent.com/80582110/120927764-3f878580-c6f7-11eb-8e93-7c6f3d2af7e4.png)
+![Screenshot from 2021-06-09 23-47-57](https://user-images.githubusercontent.com/80582110/121416608-3b20ce00-c97e-11eb-9ae1-8c5f3a12b92d.png)
+
