@@ -1,6 +1,5 @@
 # This Python file uses the following encoding: utf-8
 import sys
-from PySide6.QtWidgets import QApplication, QWidget
 from PySide6.QtUiTools import QUiLoader
 
 import time
@@ -10,7 +9,7 @@ from PySide6.QtWidgets import *
 
 from Timer import my_Time
 from Alarm import My_Alarm
-from functools import partial
+
 from PySide6.QtGui import QPixmap,QIcon
 
 class My_Stopwatch(QThread):
@@ -120,18 +119,12 @@ class Main(QWidget):
 
     def my_starttimer(self):
         self.my_time.start()
+        self.my_time.mysignal_end.connect(self.show_message)
+    def show_message(self):
+        msg_box = QMessageBox()
+        msg_box.setText('Dismiss')
+        msg_box.exec_()
 
-        # if not self.running_timer:
-        #     print('d')
-        #     self.my_time.start()
-        #     self.running_timer=True
-        #     self.ui.btn_timer_start.setStyleSheet('color:red')
-        #     self.ui.btn_timer_start.setText("Pause")
-        # else:
-        #     self.my_time.terminate()
-        #     self.running_timer = False
-        #     self.ui.btn_timer_start.setStyleSheet('color:green')
-        #     self.ui.btn_timer_start.setText("Resume")
 
 
 #Alarm

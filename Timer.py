@@ -1,10 +1,11 @@
-from PySide6.QtCore import QThread
+from PySide6.QtCore import QThread, Signal
 import time
 import sounddevice as sd
 import soundfile as sf
 from PySide6.QtWidgets import QMessageBox
 
 class my_Time(QThread):
+    mysignal_end=Signal()
     def __init__(self, ui):
         QThread.__init__(self)
         self.ui = ui
@@ -42,14 +43,14 @@ class my_Time(QThread):
             self.ui.le_timer_second.setText(str(self.second))
             time.sleep(1)
             if self.hour==0 and self.minute==0 and self.second==0:
-        # else:
-
                 data, fs = sf.read('agua.wav')
                 sd.play(data, fs)
                 status = sd.wait()
-                msg_box = QMessageBox()
-                msg_box.setText('Dismiss')
-                msg_box.exec_()
+                self.mysignal_end.emit()
+                break
+
+
+
                 # self.reset()
                 # self.ui.le_timer_hour.setText("00")
                 # self.ui.le_timer_hour.setText("00")
